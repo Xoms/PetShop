@@ -4,17 +4,52 @@
 <head>  
   <title> PetShop </title>  
   <meta charset="utf-8">
+  <link rel="stylesheet" href="style/style.css">
 </head>
+
 <body>  
+
+  <div class= "header">
+    <h1>PET SHOP</h1>
+    <div>
+      <button class = "cart">
+        <img src="/img/cart-cat.png" alt="Basket"></img>
+      </button>    
+    </div>
+  </div>
+
+
   <div class = "petShop">
-    <div class = "aboceAveragePrice">
+
+    <div class = "initialQuery">
+      <div class = "aboveAveragePrice">        
+      </div>
+      <div class = "fluffyOrWhite">
+      </div>
+      <div class = "cats">
+      </div>
     </div>
 
+    <div class = "mainMenu">
+      <div class = "Cats">
+        <div>Cats</div>
+        <div class = "catsBreed"></div>        
+      </div>
+      <div class = "Dogs">
+        <div>Dogs</div>
+        <div class = "dogsBreed"></div>        
+      </div>
+      <div class = "Hamsters">
+        <div>Hamsters</div>       
+      </div>
+
+      <div class = "showItems">
+        
+      </div>
   </div>
 
     
-<script type="text/javascript" src="model/pets_classes.js"></script>
-<script type="text/javascript" src="controller/ctrl.js"></script>
-<script type="text/javascript" src="view/petShopView.js"></script>
+
+<script type="module" src="controller/main_controller.js"></script>
 </body>
 </html>

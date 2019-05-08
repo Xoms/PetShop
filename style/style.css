@@ -1,0 +1,27 @@
+.header {
+
+}
+.header > h1 {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    color: #c57325;
+}
+
+.header > div {
+    min-height: 80px;
+    line-height: 80px;
+    float: right;
+    width: 20%;
+}
+
+.cart {
+    border: none;
+    background-color: transparent;
+}
+
+.initialQuery > div {
+    width: 33.3%;
+    display: inline-block;
+    float: left;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "color": "ginger",
+        "price": 50,
+        "family": "Hamster",
+        "isFluffy": true
+    },
+    {
+        "color": "gray",
+        "price": 30,
+        "family": "Hamster",
+        "isFluffy": false
+    },
+    {
+        "color": "black",
+        "price": 50,
+        "family": "Cat",
+        "name": "Vasiliy",
+        "breed": "Sphinx",
+        "isFluffy": false
+    },
+    {
+        "color": "ginger",
+        "price": 80,
+        "family": "Cat",
+        "name": "Murka",
+        "breed": "Persian",
+        "isFluffy": true
+    },
+    {
+        "color": "brown",
+        "price": 100,
+        "family": "Dog",
+        "name": "Fyodor",
+        "breed": "Bigl"
+    },
+    {
+        "color": "black",
+        "price": 70,
+        "family": "Dog",
+        "name": "Polkan",
+        "breed": "Sheepdog"
+    }
+]
