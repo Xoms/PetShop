@@ -2,6 +2,7 @@
 export default class InitialQueryController{
 
     constructor(pets){
+        this.pets = pets;
         this.avPrice = 0;
         this.aboveAveragePrice = [];
         this.fluffyOrWhite = [];
@@ -10,7 +11,7 @@ export default class InitialQueryController{
 
     getAveragePrice(pets){        
         for (let i = 0; i < pets.length; i++){
-            this.avPrice += pets[i].price;
+            this.avPrice += this.pets[i].price;
         } 
         this.avPrice = this.avPrice / (pets.length - 1);        
     }
@@ -29,4 +30,11 @@ export default class InitialQueryController{
             }
         }
     }
+
+    run() {
+        this.getAveragePrice(this.pets);
+        this.getPetsAboveAveragePrice(this.pets);
+        this.getFluffyOrWhite(this.pets);        
+    }
+
 }

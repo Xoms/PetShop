@@ -11,34 +11,55 @@ export default class InitialViewer{
 
     showFluffyOrWhite(){
         const elem = document.querySelector(".fluffyOrWhite");
-        let outStr = `<h2>Fluffy or White pets<h2>`;
+        let outStr = `<h3>Fluffy or White pets</h3>`;
 
         for (let i = 0; i < this.fluffyOrWhite.length; i++){
-            outStr += `${this.fluffyOrWhite[i].toString} 
-            <button class = "toCart">+</button><br>`;
+            //${this.fluffyOrWhite[i].id};
+            outStr += `<div class = item>
+                <div>
+                ${this.fluffyOrWhite[i].family}; 
+                ${this.fluffyOrWhite[i].price} 
+                </div>
+                <div><button class = "toCart">+</button></div>
+                </div>`;
         }
         elem.innerHTML = outStr;
-    }
+    }  
 
     showCats(){
-        const elem = document.querySelectorAll(".Cats")[0];
-        let outStr = `<h2>Cats <h2>`;
+        const elem = document.querySelectorAll(".cats")[0];
+        let outStr = `<h3>Cats</h3>`;
 
         for (let i = 0; i < this.cats.length; i++){
-            outStr += `${this.cats[i].toString} 
-            <button class = "toCart">+</button><br>`;
+            outStr += `<div class = item>
+                <div>
+                ${this.cats[i].name}; ${this.cats[i].price}   
+                </div>
+                <div><button class = "toCart">+</button></div>
+                </div>`;
         }
         elem.innerHTML = outStr;
     }
 
     showPetsAboveAverage(){
-        const elem = document.querySelectorAll(".aboveAveragePrice");
-        let outStr = `<h2>Pets with price above Average <h2>`;
+        const elem = document.querySelector(".aboveAveragePrice");
+        let outStr = `<h3>Pets with price above Average </h3>`;
 
         for (let i = 0; i < this.aboveAveragePrice.length; i++){
-            outStr += `${this.aboveAveragePrice[i].toString} 
-            <button class = "toCart">+</button><br>`;
+            outStr += `<div class = item>
+                <div>
+                ${this.aboveAveragePrice[i].family}; 
+                ${this.aboveAveragePrice[i].price} 
+                </div>
+                <div><button class = "toCart">+</button></div>
+                </div>`;
         }
         elem.innerHTML = outStr;
+    }
+
+    run(){
+        this.showFluffyOrWhite();
+        this.showCats();
+        this.showPetsAboveAverage();
     }
 }
