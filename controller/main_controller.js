@@ -3,8 +3,6 @@ import DbController from '/controller/db_controller.js';
 import MenuController from '/controller/mainMenuController.js';
 import CartController from '/controller/cart_controller.js';
 
-import InitialViewer from '/view/initialViewer.js';
-import PetShopView from '/view/petShopView.js';
 import CartViewer from '/view/cartViewer.js';
 
 
@@ -13,13 +11,9 @@ class MainController {
         this.dbCntrl;
         this.initialQueryCntrl;
         this.menuController;
-        this.cartController;
-
-        this.initialViewer;
-        this.petShopView;
+        this.cartController;       
+        
     }    
-
-
 
     init(){
         
@@ -31,14 +25,9 @@ class MainController {
         })
         .then( () => { //launch calculations of start task
             this.initialQueryCntrl = 
-                new InitialQueryController(this.dbCntrl.pets);
-            this.initialQueryCntrl.run(); 
-        })
-        .then( () => { //show start task
-            this.initialViewer = new InitialViewer(this.dbCntrl.cats, 
-            this.initialQueryCntrl.fluffyOrWhite,
-            this.initialQueryCntrl.aboveAveragePrice);
-            this.initialViewer.run();
+                new InitialQueryController(this.dbCntrl.pets,
+                    this.dbCntrl.cats);
+            this.initialQueryCntrl.run();
         })
         .then ( () => { //initialisation of mainMenu
             this.menuController = new MenuController(this.dbCntrl.cats,

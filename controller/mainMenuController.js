@@ -8,6 +8,7 @@ export default class MenuController{
         this.catsBreed = [];       
         this.dogsBreed = [];
         this.petCards = [];
+        this.breed;
 
         this.petShopView;
 
@@ -15,7 +16,12 @@ export default class MenuController{
     }
     onBreedClick(e) {
         let target = e.currentTarget;
-        if (target.className == )
+        console.log(e.target);
+        if (target.parentElement.classList.contains("dogsBreed"||"catsBreed")){
+            this.breed = target.innerHTML;
+            console.log(target);
+            console.log(this.breed);
+        }
     }
 
     
@@ -40,8 +46,8 @@ export default class MenuController{
         this.getDogsBreed();
         this.getCatsBreed();
         this.petShopView = 
-                new PetShopView (this.menuController.catsBreed,
-                this.menuController.dogsBreed);
+                new PetShopView (this.catsBreed,
+                this.dogsBreed);
             this.petShopView.init();
             this.petShopView.onBreedClick = this.onBreedClick.bind(this);
     }

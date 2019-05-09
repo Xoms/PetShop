@@ -11,7 +11,7 @@ export default class PetShopView{
     }
 
     showCatsBreed(){
-        const elem = document.querySelector(".catsBreed > ul");
+        const elem = document.querySelector(".catsBreed");
         for (let i = 0; i<this.catsBreed.length; i++){
             let li = document.createElement('li');
             li.innerHTML = this.catsBreed[i];
@@ -20,7 +20,7 @@ export default class PetShopView{
     }    
 
     showDogsBreed(){
-        const elem = document.querySelector(".dogsBreed > ul");
+        const elem = document.querySelector(".dogsBreed");
         for (let i = 0; i<this.dogsBreed.length; i++){
             let li = document.createElement('li');
             li.innerHTML = this.dogsBreed[i];
@@ -29,13 +29,13 @@ export default class PetShopView{
     }
 
     addListeners(){
-        document.addEventListener("click", onBreedClick);
+        document.addEventListener("click", this.onBreedClick);
     }
 
     init(){
         this.showCatsBreed();
         this.showDogsBreed();
-        addListeners();
+        this.addListeners();
     }
     
 

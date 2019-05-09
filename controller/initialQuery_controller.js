@@ -1,11 +1,15 @@
 //calculates start tasks and sends it to initialViewer
+import InitialViewer from '/view/initialViewer.js';
+
 export default class InitialQueryController{
 
-    constructor(pets){
+    constructor(pets, cats){
         this.pets = pets;
         this.avPrice = 0;
         this.aboveAveragePrice = [];
         this.fluffyOrWhite = [];
+        this.cats = cats;
+        this.initialViewer;
 
     }
 
@@ -34,7 +38,12 @@ export default class InitialQueryController{
     run() {
         this.getAveragePrice(this.pets);
         this.getPetsAboveAveragePrice(this.pets);
-        this.getFluffyOrWhite(this.pets);        
+        this.getFluffyOrWhite(this.pets);
+
+        this.initialViewer = new InitialViewer(this.cats, 
+            this.fluffyOrWhite,
+            this.aboveAveragePrice);
+        this.initialViewer.run();        
     }
 
 }
