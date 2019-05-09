@@ -14,17 +14,6 @@ export default class MenuController{
 
 
     }
-    onBreedClick(e) {
-        let target = e.currentTarget;
-        console.log(e.target);
-        if (target.parentElement.classList.contains("dogsBreed"||"catsBreed")){
-            this.breed = target.innerHTML;
-            console.log(target);
-            console.log(this.breed);
-        }
-    }
-
-    
 
     getCatsBreed(){
         this.cats.forEach( item => {
@@ -37,7 +26,7 @@ export default class MenuController{
     getDogsBreed(){
         this.dogs.forEach( item => {
             if (!this.dogsBreed.includes(item.breed)){
-                this.dogsBreed.push(item.breed); 
+                this.dogsBreed.push(item.breed);                
             }
         })
     }
@@ -48,17 +37,42 @@ export default class MenuController{
         this.petShopView = 
                 new PetShopView (this.catsBreed,
                 this.dogsBreed);
-            this.petShopView.init();
-            this.petShopView.onBreedClick = this.onBreedClick.bind(this);
+        this.petShopView.onBreedClick = this.onBreedClick.bind(this);
+        this.petShopView.init();
+            
     }
 
-    getPetByBreed(arr, breed){
+    //event handler
+    onBreedClick(e) {
+        let target = e.target;        
+        
+        if (target.parentElement.classList.contains("dogsBreed")){
+            this.breed = target.innerHTML;
+            this.getPetsByBreed(this.dogs, this.breed);
+            this.petShopView.showPetCards(this.petCards);
+
+        } else if (target.parentElement.classList.contains("catsBreed")){
+            this.breed = target.innerHTML;
+            this.getPetsByBreed(this.cats, this.breed);
+            this.petShopView.showPetCards(this.petCards);
+
+        } else if (target.parentElement.classList.contains("hamsters")){
+            this.petShopView.showPetCards(this.hamsters);
+        } else if (target.parentElement.classList.contains("cats")){
+            this.petShopView.showPetCards(this.cats);
+        } else if (target.parentElement.classList.contains("dogs")){
+            this.petShopView.showPetCards(this.dogs);
+        }
+    }
+
+    //make array of pets for view 
+    getPetsByBreed(arr, breed){
+        this.petCards = [];
         arr.forEach(item => {
-            if (this.item.breed == breed){ 
+            if (item.breed == breed){ 
                 this.petCards.push(item);
             }
         })
-
     }
 }
 
