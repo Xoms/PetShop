@@ -1,20 +1,27 @@
 [
     {
-        "id": 1557844384324,
+        "id": 1557960645836,
         "color": "ginger",
         "price": 50,
         "family": "Hamster",
         "isFluffy": true
     },
     {
-        "id": 1557844384325,
+        "id": 1557960645837,
         "color": "gray",
         "price": 30,
         "family": "Hamster",
         "isFluffy": false
     },
     {
-        "id": 1557844384326,
+        "id": 1557960645838,
+        "color": "white",
+        "price": 60,
+        "family": "Hamster",
+        "isFluffy": false
+    },
+    {
+        "id": 1557960645839,
         "color": "black",
         "price": 50,
         "family": "Cat",
@@ -23,7 +30,7 @@
         "isFluffy": false
     },
     {
-        "id": 1557844384327,
+        "id": 1557960645841,
         "color": "ginger",
         "price": 80,
         "family": "Cat",
@@ -32,7 +39,16 @@
         "isFluffy": true
     },
     {
-        "id": 1557844384328,
+        "id": 1557960645842,
+        "color": "gray",
+        "price": 60,
+        "family": "Cat",
+        "name": "Tihon",
+        "breed": "Persian",
+        "isFluffy": false
+    },
+    {
+        "id": 1557960645843,
         "color": "brown",
         "price": 100,
         "family": "Dog",
@@ -40,11 +56,19 @@
         "breed": "Bigl"
     },
     {
-        "id": 1557844384329,
+        "id": 1557960645844,
         "color": "black",
         "price": 70,
         "family": "Dog",
         "name": "Polkan",
         "breed": "Sheepdog"
+    },
+    {
+        "id": 1557960645845,
+        "color": "white",
+        "price": 80,
+        "family": "Dog",
+        "name": "Bim",
+        "breed": "Spaniel"
     }
 ]

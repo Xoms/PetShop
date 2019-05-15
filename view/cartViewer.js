@@ -12,9 +12,10 @@ export default class CartViewer{
     }
 
     closeCart(){
+        this.hideCover();
         let cartContent = document.querySelector('.cartContent');
         cartContent.style.display = 'none';
-        this.hideCover();
+      
     }
 
 
@@ -28,9 +29,7 @@ export default class CartViewer{
         if(!cards) {
             cartContent.querySelector('div').innerHTML = '';
             return;
-        }
-
-        this.showCover();                
+        }                      
         cartContent.style.display = 'block';     
 
         

@@ -27,20 +27,10 @@ export default class DbController {
             }
             //...and concatenate them all together            
         }
-        this.pets = [].concat(this.hamsters, this.cats, this.dogs); 
-        console.log(this.cats);        
+        this.pets = [].concat(this.hamsters, this.cats, this.dogs);               
     }
 
-    updateDb(data){
-        fetch("/model/db.json", 
-            {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    }
+    
 
     init(){        
         

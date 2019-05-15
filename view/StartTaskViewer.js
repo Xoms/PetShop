@@ -10,8 +10,6 @@ export default class StartTaskViewer{
     }
 
     showPetCards(cards, elem){
-        console.log(cards);
-        
         elem.innerHTML = ``;
         let outStr = ``;
 

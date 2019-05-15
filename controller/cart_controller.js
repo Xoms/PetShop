@@ -25,10 +25,9 @@ export default class CartController {
 
     }    
     //Listener for button "Cart"
-    showCart(){
-        console.log(this.cart);
+    showCart(){        
         this.cartViewer.showCart(this.cart);
-
+        this.cartViewer.showCover();  
     }
 
     //Listeners for add/remove cart items
@@ -42,7 +41,7 @@ export default class CartController {
     }
 
     onOk(){
-        this.dbCntrl.updateDb(this.dbCntrl.pets);        
+                
         this.inCart = 0;
         this.cart = [];
         this.cartViewer.closeCart();
