@@ -1,17 +1,20 @@
 [
     {
+        "id": 1557844384324,
         "color": "ginger",
         "price": 50,
         "family": "Hamster",
         "isFluffy": true
     },
     {
+        "id": 1557844384325,
         "color": "gray",
         "price": 30,
         "family": "Hamster",
         "isFluffy": false
     },
     {
+        "id": 1557844384326,
         "color": "black",
         "price": 50,
         "family": "Cat",
@@ -20,6 +23,7 @@
         "isFluffy": false
     },
     {
+        "id": 1557844384327,
         "color": "ginger",
         "price": 80,
         "family": "Cat",
@@ -28,6 +32,7 @@
         "isFluffy": true
     },
     {
+        "id": 1557844384328,
         "color": "brown",
         "price": 100,
         "family": "Dog",
@@ -35,6 +40,7 @@
         "breed": "Bigl"
     },
     {
+        "id": 1557844384329,
         "color": "black",
         "price": 70,
         "family": "Dog",

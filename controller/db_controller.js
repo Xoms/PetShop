@@ -1,29 +1,51 @@
-export default class DbController {
-    constructor(){
-        this.url = "/model/db.json";
+import { Cat, Dog, Hamster } from "/model/pets_classes.js";
+
+export default class DbController {    
+
+    setPets(data){
         this.pets = [];
         this.cats = [];
         this.dogs = [];
         this.hamsters = [];
-    }
-
-    setPets(data){
-        this.pets = data;
-        for (let i = 0; i < this.pets.length; i++){
-            if (this.pets[i].family === 'Hamster') {
-                this.hamsters.push(this.pets[i]);
-            } else if (this.pets[i].family === 'Cat'){
-                this.cats.push(this.pets[i]);
-            } else if (this.pets[i].family === 'Dog'){
-                this.dogs.push(this.pets[i]);
-            }  
+        //get arrays of pets by family
+        for (let i = 0; i < data.length; i++){
+            //hamsters
+            if (data[i].family === 'Hamster') {
+                this.hamsters.push(new Hamster(data[i].id,
+                    data[i].color, data[i].price, 
+                    data[i].isFluffy, data[i].family));
+            //cats
+            } else if (data[i].family === 'Cat'){
+                this.cats.push(new Cat (data[i].id, data[i].color,
+                    data[i].price, data[i].name, data[i].breed, 
+                    data[i].isFluffy, data[i].family));
+            //dogs 
+            } else if (data[i].family === 'Dog'){
+                this.dogs.push(new Dog(data[i].id, data[i].color,
+                    data[i].price, data[i].name, data[i].breed, 
+                    data[i].family));
+            }
+            //...and concatenate them all together            
         }
-        console.log (this.pets);
+        this.pets = [].concat(this.hamsters, this.cats, this.dogs); 
+        console.log(this.cats);        
     }
 
-    getDb(){
+    updateDb(data){
+        fetch("/model/db.json", 
+            {
+        method: "PUT",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    }
+
+    init(){        
         
-        let promise = fetch(this.url)
+        
+        let promise = fetch("/model/db.json")
         .then(response =>{
             return response.json();
         })        

@@ -1,39 +1,32 @@
-import InitialQueryController from '/controller/initialQuery_controller.js';
+import StartTaskController from '/controller/start_task_controller.js';
 import DbController from '/controller/db_controller.js';
-import MenuController from '/controller/mainMenuController.js';
+import PetShopController from '/controller/pet_shop_controller.js';
 import CartController from '/controller/cart_controller.js';
 
-import CartViewer from '/view/cartViewer.js';
-
-
 class MainController {
-    constructor(){
-        this.dbCntrl;
-        this.initialQueryCntrl;
-        this.menuController;
-        this.cartController;       
-        
-    }    
-
     init(){
         
         this.dbCntrl = new DbController;        
          
-        this.dbCntrl.getDb()//recieved a promisse from dbController
+        this.dbCntrl.init()//recieved a promisse from dbController
         .then(data => {
             this.dbCntrl.setPets(data);             
         })
         .then( () => { //launch calculations of start task
-            this.initialQueryCntrl = 
-                new InitialQueryController(this.dbCntrl.pets,
+            this.startTaskController = 
+                new StartTaskController(this.dbCntrl.pets,
                     this.dbCntrl.cats);
-            this.initialQueryCntrl.run();
-        })
-        .then ( () => { //initialisation of mainMenu
-            this.menuController = new MenuController(this.dbCntrl.cats,
+            this.startTaskController.init();
+
+        //initialisation of Main Menu
+            this.petShopController = new PetShopController(this.dbCntrl.cats,
                 this.dbCntrl.dogs, this.dbCntrl.hamsters);
-            this.menuController.init();
-            
+            this.petShopController.init();
+
+        //init of cart
+            this.cartController = new CartController(this.dbCntrl, 
+                this.startTaskController, this.petShopController);
+            this.cartController.init();          
         })
         .catch (error => {
             console.error(error);

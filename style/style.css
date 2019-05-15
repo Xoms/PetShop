@@ -26,18 +26,38 @@
     background-color: transparent;
 }
 
-.cartContent {
+#cover-div {
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    opacity: 0.3;
 }
 
-.initialQuery {
+.cartContent {
+
+    position: absolute;
+    top:0;
+    z-index: 9999;
+    display: none;
+    min-height: 150px;
+    width: 90%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.startTask {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px; 
     
 }
 
-.initialQuery > div {
+.startTask > div {
     border-radius: 5px;
     padding: 10px;
     margin-right: 2px;
@@ -48,8 +68,9 @@
 
 .item {
     display: flex;
-    margin-top: 3px;
+    margin-bottom: 10px;
    justify-content: flex-start;
+   background-color: #fcfcfc;
 
 }
 .item :first-child {
@@ -58,6 +79,7 @@
     width: 70%;
 }
 .item :last-child {
+    align-self: center;
     margin: 0px;
     padding: 0px;
     width: 30%;
@@ -83,10 +105,12 @@
 }
 .mainMenu h2 {
     cursor: pointer;
+    text-decoration: underline;
 }
 
 .mainMenu li {
     cursor: pointer;
+    text-decoration: underline;
     margin-top: 3px;
     width: 40%;    
 }
