@@ -1,3 +1,4 @@
+Soft-Serve IT Academy, Web-UI 162 task:
 Requirements: 
 - after start app should display three static lists with:
  -- all cats
