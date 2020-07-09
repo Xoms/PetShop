@@ -1,6 +1,6 @@
 Soft-Serve IT Academy, Web-UI 162 task:
 Requirements: 
-- after start app should display three static lists with:
+- after start app should display three static lists (from JSON) with:
  -- all cats
  -- all pets with price greater than average
  -- all pets which fluffy or has white color
